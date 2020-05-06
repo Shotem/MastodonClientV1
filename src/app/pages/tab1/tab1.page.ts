@@ -7,15 +7,6 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./tab1.page.scss'],
 })
 export class Tab1Page {
-  user = null;
-  constructor(private auth: AuthService) { }
-
-  ionViewWillEnter() {
-    this.user = this.auth.getUser();
-  }
- 
-  logout() {
-    this.auth.logout();
-  }
+  
 
 }

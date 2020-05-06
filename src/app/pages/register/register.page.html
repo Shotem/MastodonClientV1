@@ -8,5 +8,17 @@
 </ion-header>
  
 <ion-content padding>
- 
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating">Correo:</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password:</ion-label>
+      <ion-input type="text" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <ion-item-divider>
+      <ion-button (click) = "onRegister()">Register</ion-button>
+    </ion-item-divider>
+  </ion-card>
 </ion-content>

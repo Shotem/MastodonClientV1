@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -9,28 +7,12 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  credentials = {
-    email: 'sebastian.terrazas@hotmail.com',
-    pw: '123'
-  }
+  
 
-  constructor(private auth: AuthService, private router: Router, private alertCtrl: AlertController) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  login() {
-    this.auth.login(this.credentials).subscribe(async res => {
-      if (res) {
-        this.router.navigateByUrl('/members');
-      } else {
-        const alert = await this.alertCtrl.create({
-          header: 'Login Failed',
-          message: 'Wrong credentials.',
-          buttons: ['OK']
-        });
-        await alert.present();
-      }
-    });
-  }
+  
 }
