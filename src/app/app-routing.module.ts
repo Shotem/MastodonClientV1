@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'toot',
+    loadChildren: () => import('./toot/toot.module').then( m => m.TootPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
+  {
+    path: 'user-info',
+    loadChildren: () => import('./user-info/user-info.module').then( m => m.UserInfoPageModule)
+  }
 ];
 
 @NgModule({
